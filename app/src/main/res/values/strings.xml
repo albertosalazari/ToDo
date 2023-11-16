@@ -1,5 +1,29 @@
 <resources>
     <string name="app_name">ToDo</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo">Logo</string>
+    <string name="todo_app">ToDo App</string>
+
+    <string name="email">Email</string>
+    <string name="confirmar_senha">Confirmar senha</string>
+    <string name="senha">Senha</string>
+    <string name="ja_possui_conta">Já possui conta?</string>
+    <string name="registrar">Registrar</string>
+    <string name="entrar">Entrar</string>
+    <string name="nao_possui_conta">Não possui conta?</string>
+    <string name="as_senhas_devem_ser_iguais">As senhas devem ser iguais!</string>
+
+    <string name="facebook_app_id">895301961992974</string>
+    <string name="facebook_client_token">e84417de7fdfac42b14bbc6e65f3eb51</string>
+    <string name="fb_login_protocol_scheme">fb895301961992974</string>
+    <string name="continuar_com_facebook">Continuar com Facebook</string>
+    <string name="email_ou_senha_incorretos">Email ou senha incorretos!</string>
+    <string name="senha_incompativel">Senha incompatível</string>
+    <string name="Login_realizado_com_sucesso">Login realizado com sucesso!</string>
+    <string name="realize_o_login_para_continuar">Realize o Login para continuar!</string>
+    <string name="senhas_nao_coincidem">Senhas não coincidem!</string>
+    <string name="todos_os_campos_devem_ser_preenchidos">Todos os campos devem ser preenchidos!</string>
+    <string name="registro_realizado_com_sucesso">Registro realizado com sucesso!</string>
+    <string name="nao_foi_possivel_realizar_o_cadastro">Não foi possível realizar o cadastro!</string>
+    <string name="criar">Criar</string>
+    <string name="escreva_aqui_a_tarefa">Escreva aqui a tarefa</string>
 </resources>
