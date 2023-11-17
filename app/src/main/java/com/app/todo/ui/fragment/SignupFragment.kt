@@ -1,7 +1,6 @@
 package com.app.todo.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,9 +63,5 @@ class SignupFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         binding = null
-    }
-
-    companion object {
-        private var TAG = "EmailAndPassword"
     }
 }

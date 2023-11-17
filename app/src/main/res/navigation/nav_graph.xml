@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.app.todo.ui.fragment.HomeFragment"
+        android:name="com.app.todo.ui.view.HomeFragment"
         android:label="Home">
         <action
             android:id="@+id/action_home_to_login"

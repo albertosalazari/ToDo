@@ -1,4 +1,4 @@
-package com.app.todo.ui.fragment
+package com.app.todo.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.app.todo.R
+import com.app.todo.data.model.ToDoData
 import com.app.todo.databinding.FragmentPopupAddTodoBinding
-import com.app.todo.ui.adapter.ToDoData
 
 class PopupAddTodoFragment : DialogFragment() {
     private lateinit var binding: FragmentPopupAddTodoBinding
@@ -62,7 +62,7 @@ class PopupAddTodoFragment : DialogFragment() {
 
     }
 
-    fun setListener(listener:DialogButtonCreateTodoListeners) {
+    fun setListener(listener: DialogButtonCreateTodoListeners) {
         this.listener = listener
     }
 

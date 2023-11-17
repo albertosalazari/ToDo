@@ -1,16 +1,14 @@
 package com.app.todo.ui.activity
 
 
-import android.app.ProgressDialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.app.todo.R
+
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
@@ -27,13 +25,5 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-    fun showActionBar() {
-        supportActionBar?.show()
-    }
-
-    fun hideActionBar() {
-        supportActionBar?.hide()
     }
 }
