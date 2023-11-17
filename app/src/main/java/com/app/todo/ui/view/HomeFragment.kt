@@ -12,10 +12,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.todo.R
 import com.app.todo.data.model.ToDoData
 import com.app.todo.databinding.FragmentHomeBinding
 import com.app.todo.ui.viewmodel.ToDoViewModel
 import com.app.todo.ui.viewmodel.ToDoViewModelFactory
+import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment(), PopupAddTodoFragment.DialogButtonCreateTodoListeners,
@@ -70,6 +72,11 @@ class HomeFragment : Fragment(), PopupAddTodoFragment.DialogButtonCreateTodoList
                 childFragmentManager,
                 PopupAddTodoFragment.TAG
             )
+        }
+        binding.logoutHome.setOnClickListener {
+            auth.signOut()
+            LoginManager.getInstance().logOut()
+            navController.navigate(R.id.action_home_to_login)
         }
     }
 
