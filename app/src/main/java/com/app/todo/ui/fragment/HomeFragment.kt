@@ -135,7 +135,7 @@ class HomeFragment : Fragment(), PopupAddTodoFragment.DialogButtonCreateTodoList
             if(popupFragment != null)
                 childFragmentManager.beginTransaction().remove(popupFragment!!).commit()
 
-            popupFragment = PopupAddTodoFragment.newInstance(toDoData.taskId, toDoData.task)
+            popupFragment = PopupAddTodoFragment.newInstance(toDoData.taskId, toDoData.task,true)
             popupFragment!!.setListener(this)
             popupFragment!!.show(childFragmentManager,PopupAddTodoFragment.TAG)
         }

@@ -30,4 +30,5 @@
     <string name="tarefa_salva_com_sucesso">Tarefa salva com sucesso</string>
     <string name="item">Item</string>
     <string name="tarefa_deletada_corretamente">Tarefa deletada corretamente!</string>
+    <string name="atualizar">Atualizar</string>
 </resources>

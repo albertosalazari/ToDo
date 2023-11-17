@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.app.todo.R
 import com.app.todo.databinding.FragmentPopupAddTodoBinding
 import com.app.todo.ui.adapter.ToDoData
 
@@ -29,6 +30,8 @@ class PopupAddTodoFragment : DialogFragment() {
             )
 
             binding.editTextTodoDescription.setText(toDoData?.task)
+            binding.buttonCreateTodo.text = getString(R.string.atualizar) // Altera o texto do botão
+
         }
 
         registerEvents()
@@ -67,10 +70,14 @@ class PopupAddTodoFragment : DialogFragment() {
         const val TAG = "AddTodoPopupFragment"
 
         @JvmStatic
-        fun newInstance(taskId: String, task: String) = PopupAddTodoFragment().apply {
+        fun newInstance(taskId: String, task: String, isUpdate:Boolean = false) = PopupAddTodoFragment().apply {
             arguments = Bundle().apply {
                 putString("taskId", taskId)
                 putString("task", task)
+            }
+
+            if (isUpdate) {
+                arguments?.putBoolean("isUpdate", true)
             }
         }
     }
