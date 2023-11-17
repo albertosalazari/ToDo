@@ -31,4 +31,6 @@
     <string name="item">Item</string>
     <string name="tarefa_deletada_corretamente">Tarefa deletada corretamente!</string>
     <string name="atualizar">Atualizar</string>
+    <string name="ad_carregado">Ad Carregado!</string>
+    <string name="retornando_para_o_app">Retornando para o App</string>
 </resources>

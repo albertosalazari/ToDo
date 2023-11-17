@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +19,11 @@ import com.app.todo.databinding.FragmentHomeBinding
 import com.app.todo.ui.viewmodel.ToDoViewModel
 import com.app.todo.ui.viewmodel.ToDoViewModelFactory
 import com.facebook.login.LoginManager
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment(), PopupAddTodoFragment.DialogButtonCreateTodoListeners,
@@ -29,6 +35,8 @@ class HomeFragment : Fragment(), PopupAddTodoFragment.DialogButtonCreateTodoList
     private var popupFragment: PopupAddTodoFragment? = null
     private lateinit var adapter: ToDoAdapter
     private lateinit var viewModel: ToDoViewModel
+
+    lateinit var mAdView : AdView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +50,48 @@ class HomeFragment : Fragment(), PopupAddTodoFragment.DialogButtonCreateTodoList
         super.onViewCreated(view, savedInstanceState)
         init(view)
         registerEvents()
+        loadBannerAd()
+
+    }
+
+    private fun loadBannerAd() {
+        MobileAds.initialize(requireContext()){}
+
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+        mAdView.adListener = object: AdListener() {
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+                Toast.makeText(requireContext(),getString(R.string.ad_carregado), Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onAdImpression() {
+                // Code to be executed when an impression is recorded
+                // for an ad.
+            }
+
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                Toast.makeText(requireContext(),getString(R.string.retornando_para_o_app), Toast.LENGTH_SHORT).show()
+
+            }
+        }
     }
 
     private fun init(view: View) {
